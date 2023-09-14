@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:go_router/go_router.dart';
+
 class App extends StatelessWidget {
   const App({super.key});
 
@@ -10,10 +12,13 @@ class App extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
-            color: Colors.blue,
-            padding: const EdgeInsets.all(16),
-            child: GestureDetector(
+          InkWell(
+            onTap: () {
+              context.go('/reorderable_list');
+            },
+            child: Container(
+              color: Colors.blue,
+              padding: const EdgeInsets.all(16),
               child: Text('Reorderable List'),
             ),
           )

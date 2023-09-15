@@ -2,16 +2,25 @@ import 'package:flutter/material.dart';
 
 import 'result.dart';
 
-class UnionScreen extends StatefulWidget {
-  const UnionScreen({Key? key}) : super(key: key);
+class UnionScreen extends StatelessWidget {
+  const UnionScreen({super.key});
 
-  @override
-  State<UnionScreen> createState() => _UnionScreenState();
-}
-
-class _UnionScreenState extends State<UnionScreen> {
   @override
   Widget build(BuildContext context) {
+    void dialog(String message) {
+      showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            content: Container(
+              padding: const EdgeInsets.all(15),
+              child: Text(message),
+            ),
+          );
+        },
+      );
+    }
+
     final TextEditingController controller = TextEditingController();
     return Scaffold(
       appBar: AppBar(
@@ -37,30 +46,16 @@ class _UnionScreenState extends State<UnionScreen> {
                     : Result.small(int.parse(controller.text));
                 result.when(
                   big: (value) {
-                    dialog(" 큰 숫자 입니다.");
+                    dialog("100보다 큰 숫자 입니다.");
                   },
                   small: (value) {
-                    dialog("작은 숫자 입니다.");
+                    dialog("100보다 작은 숫자 입니다.");
                   },
                 );
               },
               child: const Text("제출"))
         ],
       ),
-    );
-  }
-
-  void dialog(String message) {
-    showDialog(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          content: Container(
-            padding: const EdgeInsets.all(15),
-            child: Text(message),
-          ),
-        );
-      },
     );
   }
 }

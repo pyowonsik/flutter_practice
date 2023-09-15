@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:flutter_practice/app.dart';
+import 'package:flutter_practice/src/freezed/freezed_screen.dart';
 import 'package:flutter_practice/src/reorederable_list/reorderable_list_page.dart';
+import 'package:flutter_practice/src/union/union_scrren.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +26,15 @@ class MyApp extends StatelessWidget {
         GoRoute(
           path: "/reorderable_list",
           builder: (_, state) => const ReorderableListPage(),
-        )
+        ),
+        GoRoute(
+          path: "/freezed_screen",
+          builder: (_, state) => const FreezedScreen(),
+        ),
+        GoRoute(
+          path: "/union_screen",
+          builder: (_, state) => const UnionScreen(),
+        ),
       ],
     );
     return MaterialApp.router(

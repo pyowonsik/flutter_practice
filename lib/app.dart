@@ -19,7 +19,29 @@ class App extends StatelessWidget {
             child: Container(
               color: Colors.blue,
               padding: const EdgeInsets.all(16),
-              child: Text('Reorderable List'),
+              child: const Text('Orderable List'),
+            ),
+          ),
+          const SizedBox(height: 10),
+          InkWell(
+            onTap: () {
+              context.go('/union_screen');
+            },
+            child: Container(
+              color: Colors.blue,
+              padding: const EdgeInsets.all(16),
+              child: const Text('UnionScreen'),
+            ),
+          ),
+          const SizedBox(height: 10),
+          InkWell(
+            onTap: () {
+              context.go('/freezed_screen');
+            },
+            child: Container(
+              color: Colors.blue,
+              padding: const EdgeInsets.all(16),
+              child: const Text('FreezedScreen'),
             ),
           )
         ],

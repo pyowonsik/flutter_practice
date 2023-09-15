@@ -2,8 +2,6 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-import 'package:go_router/go_router.dart';
-
 class ReorderableListPage extends StatefulWidget {
   const ReorderableListPage({super.key});
 
@@ -35,13 +33,8 @@ class _ReorderableListState extends State<ReorderableListPage> {
               height: 30,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton(
-                    onPressed: () {
-                      context.go('/');
-                    },
-                    child: const Text('이전')),
                 ElevatedButton(
                     onPressed: () {
                       setState(() {
@@ -58,11 +51,6 @@ class _ReorderableListState extends State<ReorderableListPage> {
                     children: [
                       for (int index = 0; index < numbers.length; index += 1)
                         ListTile(
-                          onTap: () {
-                            setState(() {
-                              numbers[index]++;
-                            });
-                          },
                           key: Key('$index'),
                           title: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -84,9 +72,7 @@ class _ReorderableListState extends State<ReorderableListPage> {
                         if (oldIndex < newIndex) {
                           newIndex -= 1;
                         }
-                        // final int item = numbers.removeAt(oldIndex);
                         numbers.insert(newIndex, numbers.removeAt(oldIndex));
-                        // 현재 인덱스에 이전 인덱스숫자 = 들고있는 숫자를 넣어라
                       });
                     })),
           ],

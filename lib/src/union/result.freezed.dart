@@ -16,50 +16,56 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$Result {
+  int get number => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int number) success,
-    required TResult Function(String error) failure,
+    required TResult Function(int number) big,
+    required TResult Function(int number) small,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int number)? success,
-    TResult? Function(String error)? failure,
+    TResult? Function(int number)? big,
+    TResult? Function(int number)? small,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int number)? success,
-    TResult Function(String error)? failure,
+    TResult Function(int number)? big,
+    TResult Function(int number)? small,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Success value) success,
-    required TResult Function(_Failure value) failure,
+    required TResult Function(_Big value) big,
+    required TResult Function(_Small value) small,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Success value)? success,
-    TResult? Function(_Failure value)? failure,
+    TResult? Function(_Big value)? big,
+    TResult? Function(_Small value)? small,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Success value)? success,
-    TResult Function(_Failure value)? failure,
+    TResult Function(_Big value)? big,
+    TResult Function(_Small value)? small,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $ResultCopyWith<Result> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ResultCopyWith<$Res> {
   factory $ResultCopyWith(Result value, $Res Function(Result) then) =
       _$ResultCopyWithImpl<$Res, Result>;
+  @useResult
+  $Res call({int number});
 }
 
 /// @nodoc
@@ -71,22 +77,34 @@ class _$ResultCopyWithImpl<$Res, $Val extends Result>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? number = null,
+  }) {
+    return _then(_value.copyWith(
+      number: null == number
+          ? _value.number
+          : number // ignore: cast_nullable_to_non_nullable
+              as int,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$_SuccessCopyWith<$Res> {
-  factory _$$_SuccessCopyWith(
-          _$_Success value, $Res Function(_$_Success) then) =
-      __$$_SuccessCopyWithImpl<$Res>;
+abstract class _$$_BigCopyWith<$Res> implements $ResultCopyWith<$Res> {
+  factory _$$_BigCopyWith(_$_Big value, $Res Function(_$_Big) then) =
+      __$$_BigCopyWithImpl<$Res>;
+  @override
   @useResult
   $Res call({int number});
 }
 
 /// @nodoc
-class __$$_SuccessCopyWithImpl<$Res>
-    extends _$ResultCopyWithImpl<$Res, _$_Success>
-    implements _$$_SuccessCopyWith<$Res> {
-  __$$_SuccessCopyWithImpl(_$_Success _value, $Res Function(_$_Success) _then)
+class __$$_BigCopyWithImpl<$Res> extends _$ResultCopyWithImpl<$Res, _$_Big>
+    implements _$$_BigCopyWith<$Res> {
+  __$$_BigCopyWithImpl(_$_Big _value, $Res Function(_$_Big) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -94,7 +112,7 @@ class __$$_SuccessCopyWithImpl<$Res>
   $Res call({
     Object? number = null,
   }) {
-    return _then(_$_Success(
+    return _then(_$_Big(
       null == number
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
@@ -105,22 +123,22 @@ class __$$_SuccessCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Success extends _Success {
-  const _$_Success(this.number) : super._();
+class _$_Big extends _Big {
+  const _$_Big(this.number) : super._();
 
   @override
   final int number;
 
   @override
   String toString() {
-    return 'Result.success(number: $number)';
+    return 'Result.big(number: $number)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Success &&
+            other is _$_Big &&
             (identical(other.number, number) || other.number == number));
   }
 
@@ -130,36 +148,36 @@ class _$_Success extends _Success {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SuccessCopyWith<_$_Success> get copyWith =>
-      __$$_SuccessCopyWithImpl<_$_Success>(this, _$identity);
+  _$$_BigCopyWith<_$_Big> get copyWith =>
+      __$$_BigCopyWithImpl<_$_Big>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int number) success,
-    required TResult Function(String error) failure,
+    required TResult Function(int number) big,
+    required TResult Function(int number) small,
   }) {
-    return success(number);
+    return big(number);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int number)? success,
-    TResult? Function(String error)? failure,
+    TResult? Function(int number)? big,
+    TResult? Function(int number)? small,
   }) {
-    return success?.call(number);
+    return big?.call(number);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int number)? success,
-    TResult Function(String error)? failure,
+    TResult Function(int number)? big,
+    TResult Function(int number)? small,
     required TResult orElse(),
   }) {
-    if (success != null) {
-      return success(number);
+    if (big != null) {
+      return big(number);
     }
     return orElse();
   }
@@ -167,132 +185,132 @@ class _$_Success extends _Success {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Success value) success,
-    required TResult Function(_Failure value) failure,
+    required TResult Function(_Big value) big,
+    required TResult Function(_Small value) small,
   }) {
-    return success(this);
+    return big(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Success value)? success,
-    TResult? Function(_Failure value)? failure,
+    TResult? Function(_Big value)? big,
+    TResult? Function(_Small value)? small,
   }) {
-    return success?.call(this);
+    return big?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Success value)? success,
-    TResult Function(_Failure value)? failure,
+    TResult Function(_Big value)? big,
+    TResult Function(_Small value)? small,
     required TResult orElse(),
   }) {
-    if (success != null) {
-      return success(this);
+    if (big != null) {
+      return big(this);
     }
     return orElse();
   }
 }
 
-abstract class _Success extends Result {
-  const factory _Success(final int number) = _$_Success;
-  const _Success._() : super._();
+abstract class _Big extends Result {
+  const factory _Big(final int number) = _$_Big;
+  const _Big._() : super._();
 
+  @override
   int get number;
+  @override
   @JsonKey(ignore: true)
-  _$$_SuccessCopyWith<_$_Success> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_BigCopyWith<_$_Big> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_FailureCopyWith<$Res> {
-  factory _$$_FailureCopyWith(
-          _$_Failure value, $Res Function(_$_Failure) then) =
-      __$$_FailureCopyWithImpl<$Res>;
+abstract class _$$_SmallCopyWith<$Res> implements $ResultCopyWith<$Res> {
+  factory _$$_SmallCopyWith(_$_Small value, $Res Function(_$_Small) then) =
+      __$$_SmallCopyWithImpl<$Res>;
+  @override
   @useResult
-  $Res call({String error});
+  $Res call({int number});
 }
 
 /// @nodoc
-class __$$_FailureCopyWithImpl<$Res>
-    extends _$ResultCopyWithImpl<$Res, _$_Failure>
-    implements _$$_FailureCopyWith<$Res> {
-  __$$_FailureCopyWithImpl(_$_Failure _value, $Res Function(_$_Failure) _then)
+class __$$_SmallCopyWithImpl<$Res> extends _$ResultCopyWithImpl<$Res, _$_Small>
+    implements _$$_SmallCopyWith<$Res> {
+  __$$_SmallCopyWithImpl(_$_Small _value, $Res Function(_$_Small) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? error = null,
+    Object? number = null,
   }) {
-    return _then(_$_Failure(
-      null == error
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String,
+    return _then(_$_Small(
+      null == number
+          ? _value.number
+          : number // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_Failure extends _Failure {
-  const _$_Failure(this.error) : super._();
+class _$_Small extends _Small {
+  const _$_Small(this.number) : super._();
 
   @override
-  final String error;
+  final int number;
 
   @override
   String toString() {
-    return 'Result.failure(error: $error)';
+    return 'Result.small(number: $number)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Failure &&
-            (identical(other.error, error) || other.error == error));
+            other is _$_Small &&
+            (identical(other.number, number) || other.number == number));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, error);
+  int get hashCode => Object.hash(runtimeType, number);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FailureCopyWith<_$_Failure> get copyWith =>
-      __$$_FailureCopyWithImpl<_$_Failure>(this, _$identity);
+  _$$_SmallCopyWith<_$_Small> get copyWith =>
+      __$$_SmallCopyWithImpl<_$_Small>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int number) success,
-    required TResult Function(String error) failure,
+    required TResult Function(int number) big,
+    required TResult Function(int number) small,
   }) {
-    return failure(error);
+    return small(number);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int number)? success,
-    TResult? Function(String error)? failure,
+    TResult? Function(int number)? big,
+    TResult? Function(int number)? small,
   }) {
-    return failure?.call(error);
+    return small?.call(number);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int number)? success,
-    TResult Function(String error)? failure,
+    TResult Function(int number)? big,
+    TResult Function(int number)? small,
     required TResult orElse(),
   }) {
-    if (failure != null) {
-      return failure(error);
+    if (small != null) {
+      return small(number);
     }
     return orElse();
   }
@@ -300,41 +318,43 @@ class _$_Failure extends _Failure {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Success value) success,
-    required TResult Function(_Failure value) failure,
+    required TResult Function(_Big value) big,
+    required TResult Function(_Small value) small,
   }) {
-    return failure(this);
+    return small(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Success value)? success,
-    TResult? Function(_Failure value)? failure,
+    TResult? Function(_Big value)? big,
+    TResult? Function(_Small value)? small,
   }) {
-    return failure?.call(this);
+    return small?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Success value)? success,
-    TResult Function(_Failure value)? failure,
+    TResult Function(_Big value)? big,
+    TResult Function(_Small value)? small,
     required TResult orElse(),
   }) {
-    if (failure != null) {
-      return failure(this);
+    if (small != null) {
+      return small(this);
     }
     return orElse();
   }
 }
 
-abstract class _Failure extends Result {
-  const factory _Failure(final String error) = _$_Failure;
-  const _Failure._() : super._();
+abstract class _Small extends Result {
+  const factory _Small(final int number) = _$_Small;
+  const _Small._() : super._();
 
-  String get error;
+  @override
+  int get number;
+  @override
   @JsonKey(ignore: true)
-  _$$_FailureCopyWith<_$_Failure> get copyWith =>
+  _$$_SmallCopyWith<_$_Small> get copyWith =>
       throw _privateConstructorUsedError;
 }

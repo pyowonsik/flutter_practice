@@ -32,15 +32,15 @@ class _UnionScreenState extends State<UnionScreen> {
           const SizedBox(height: 10),
           ElevatedButton(
               onPressed: () {
-                final result = int.tryParse(controller.text) != null
-                    ? Result.success(int.parse(controller.text))
-                    : const Result.failure("숫자가 아닙니다.");
+                final result = (int.parse(controller.text) > 100)
+                    ? Result.big(int.parse(controller.text))
+                    : Result.small(int.parse(controller.text));
                 result.when(
-                  success: (value) {
-                    dialog("숫자가 성공적으로 입력되었습니다. \n입력한 숫자 $value");
+                  big: (value) {
+                    dialog(" 큰 숫자 입니다.");
                   },
-                  failure: (error) {
-                    dialog(error);
+                  small: (value) {
+                    dialog("작은 숫자 입니다.");
                   },
                 );
               },

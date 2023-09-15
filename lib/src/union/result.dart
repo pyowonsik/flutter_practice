@@ -4,6 +4,6 @@ part 'result.freezed.dart';
 @freezed
 class Result with _$Result {
   const Result._();
-  const factory Result.success(int number) = _Success;
-  const factory Result.failure(String error) = _Failure;
+  const factory Result.big(int number) = _Big;
+  const factory Result.small(int number) = _Small;
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_practice/src/default_layout_widget.dart';
 
 import 'package:flutter_practice/src/freezed/exercise.dart';
 
@@ -12,7 +13,7 @@ class FreezedScreen extends StatelessWidget {
     final exercise3 = exercise1.copyWith(name: 'Pull Up');
     final exercise4 = exercise2;
 
-    return Material(
+    return DefaultLayoutWidget(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,

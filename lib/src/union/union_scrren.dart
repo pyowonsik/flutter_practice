@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_practice/src/default_layout_widget.dart';
 
 import 'result.dart';
 
@@ -22,11 +23,8 @@ class UnionScreen extends StatelessWidget {
     }
 
     final TextEditingController controller = TextEditingController();
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Freezed Union Types Test'),
-      ),
-      body: Column(
+    return DefaultLayoutWidget(
+      child: Column(
         children: [
           const SizedBox(height: 10),
           const Text("Input the number"),

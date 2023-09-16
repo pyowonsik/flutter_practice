@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_practice/src/default_layout_widget.dart';
 
 class ReorderableListPage extends StatefulWidget {
   const ReorderableListPage({super.key});
@@ -24,8 +25,8 @@ class _ReorderableListState extends State<ReorderableListPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
+    return DefaultLayoutWidget(
+      child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [

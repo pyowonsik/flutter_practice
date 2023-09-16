@@ -12,18 +12,19 @@ class FreezedScreen extends StatelessWidget {
     final exercise3 = exercise1.copyWith(name: 'Pull Up');
     final exercise4 = exercise2;
 
-    // union
-
-    return Column(
-      children: [
-        Text('name : ${exercise1.name} , restTime :  ${exercise1.restTime}'),
-        Text('name : ${exercise2.name} , restTime :  ${exercise2.restTime}'),
-        Text('name : ${exercise3.name} , restTime :  ${exercise3.restTime}'),
-        Text('$exercise1'),
-        Text('${exercise2 == exercise4}'),
-        Text(exercise1.nameLength),
-        // unio
-      ],
+    return Material(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text('name : ${exercise1.name} , restTime :  ${exercise1.restTime}'),
+          Text('name : ${exercise2.name} , restTime :  ${exercise2.restTime}'),
+          Text('name : ${exercise3.name} , restTime :  ${exercise3.restTime}'),
+          Text('$exercise1'),
+          Text('${exercise2 == exercise4}'),
+          Text('${exercise1.nameLength}'),
+        ],
+      ),
     );
   }
 }

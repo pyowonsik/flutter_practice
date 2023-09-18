@@ -7,7 +7,9 @@ class DefaultLayoutWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: child,
+      body: Center(
+        child: child,
+      ),
     );
   }
 }

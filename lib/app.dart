@@ -43,6 +43,28 @@ class App extends StatelessWidget {
               padding: const EdgeInsets.all(16),
               child: const Text('FreezedScreen'),
             ),
+          ),
+          const SizedBox(height: 10),
+          InkWell(
+            onTap: () {
+              context.go('/dio_screen');
+            },
+            child: Container(
+              color: Colors.blue,
+              padding: const EdgeInsets.all(16),
+              child: const Text('DioScreen'),
+            ),
+          ),
+          const SizedBox(height: 10),
+          InkWell(
+            onTap: () {
+              context.go('/rxdart_screen');
+            },
+            child: Container(
+              color: Colors.blue,
+              padding: const EdgeInsets.all(16),
+              child: const Text('RxDartScreen'),
+            ),
           )
         ],
       ),

@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:flutter_practice/app.dart';
+import 'package:flutter_practice/src/dio/dio_screen.dart';
 import 'package:flutter_practice/src/freezed/freezed_screen.dart';
+import 'package:flutter_practice/src/rxdart/rxdart.dart';
 import 'package:flutter_practice/src/reorederable_list/reorderable_list_page.dart';
 import 'package:flutter_practice/src/union/union_scrren.dart';
 
@@ -34,6 +36,14 @@ class MyApp extends StatelessWidget {
         GoRoute(
           path: "/union_screen",
           builder: (_, state) => const UnionScreen(),
+        ),
+        GoRoute(
+          path: "/dio_screen",
+          builder: (_, state) => const DioScreen(),
+        ),
+        GoRoute(
+          path: "/rxdart_screen",
+          builder: (_, state) => const RxDartScreen(),
         ),
       ],
     );

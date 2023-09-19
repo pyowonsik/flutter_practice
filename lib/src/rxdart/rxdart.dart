@@ -9,9 +9,9 @@ class RxDartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('RxDart Todo App'),
+        title: const Text('RxDart Todo App'),
       ),
-      body: TodoPage(),
+      body: const TodoPage(),
     );
   }
 }
@@ -59,13 +59,13 @@ class _TodoPageState extends State<TodoPage> {
           onChanged: (value) {
             // TextField의 값을 직접 업데이트하지 않음
           },
-          decoration: InputDecoration(labelText: '할 일을 입력하세요'),
+          decoration: const InputDecoration(labelText: '할 일을 입력하세요'),
           controller: _todoController,
         ),
         const SizedBox(height: 20),
         ElevatedButton(
           onPressed: _addTodo,
-          child: Text('저장'),
+          child: const Text('저장'),
         ),
         const SizedBox(height: 20),
         Expanded(
@@ -83,7 +83,7 @@ class _TodoPageState extends State<TodoPage> {
                   },
                 );
               } else {
-                return Center(child: CircularProgressIndicator());
+                return const Center(child: CircularProgressIndicator());
               }
             },
           ),

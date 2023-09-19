@@ -5,8 +5,9 @@ import 'package:go_router/go_router.dart';
 import 'package:flutter_practice/app.dart';
 import 'package:flutter_practice/src/dio/dio_screen.dart';
 import 'package:flutter_practice/src/freezed/freezed_screen.dart';
-import 'package:flutter_practice/src/rxdart/rxdart.dart';
 import 'package:flutter_practice/src/reorederable_list/reorderable_list_page.dart';
+import 'package:flutter_practice/src/rxdart/rxdart.dart';
+import 'package:flutter_practice/src/secure_storage/secure_storage_screen.dart';
 import 'package:flutter_practice/src/union/union_scrren.dart';
 
 void main() {
@@ -18,6 +19,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // return MaterialApp(
+    //   home: SecureStorageScreen(),
+    // );
     final GoRouter router = GoRouter(
       initialLocation: "/",
       routes: [
@@ -45,6 +49,10 @@ class MyApp extends StatelessWidget {
           path: "/rxdart_screen",
           builder: (_, state) => const RxDartScreen(),
         ),
+        // GoRoute(
+        //   path: "/secure_storage_screen",
+        //   builder: (_, state) => SecureStorageScreen(),
+        // ),
       ],
     );
     return MaterialApp.router(

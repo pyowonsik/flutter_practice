@@ -65,7 +65,8 @@ class App extends StatelessWidget {
               padding: const EdgeInsets.all(16),
               child: const Text('RxDartScreen'),
             ),
-          )
+          ),
+          // const SizedBox(height: 10),
         ],
       ),
     );

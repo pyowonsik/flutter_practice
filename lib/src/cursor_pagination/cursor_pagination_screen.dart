@@ -31,7 +31,7 @@ class _CursorPaginationScreenState extends State<CursorPaginationScreen> {
       'apiKey': '49da920e07694939945756640e253bce',
     });
 
-    print(resp.data);
+    List<dynamic> respData = resp.data['articles'];
   }
 
   @override

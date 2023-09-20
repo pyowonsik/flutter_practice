@@ -67,7 +67,7 @@ class App extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 10),
-        InkWell(
+          InkWell(
             onTap: () {
               context.go('/pagination_screen');
             },
@@ -77,9 +77,18 @@ class App extends StatelessWidget {
               child: const Text('PaginationScreen'),
             ),
           ),
-        ]
-       
-        ,
+          const SizedBox(height: 10),
+          InkWell(
+            onTap: () {
+              context.go('/cursor_pagination_screen');
+            },
+            child: Container(
+              color: Colors.blue,
+              padding: const EdgeInsets.all(16),
+              child: const Text('CursorPaginationScreen'),
+            ),
+          ),
+        ],
       ),
     );
   }

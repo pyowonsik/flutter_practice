@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:flutter_practice/app.dart';
+import 'package:flutter_practice/src/cursor_pagination/cursor_pagination_screen.dart';
 import 'package:flutter_practice/src/dio/dio_screen.dart';
 import 'package:flutter_practice/src/freezed/freezed_screen.dart';
 import 'package:flutter_practice/src/pagination/pagination_screen.dart';
@@ -53,6 +54,10 @@ class MyApp extends StatelessWidget {
         GoRoute(
           path: "/pagination_screen",
           builder: (_, state) => const PaginationScreen(),
+        ),
+        GoRoute(
+          path: "/cursor_pagination_screen",
+          builder: (_, state) => const CursorPaginationScreen(),
         ),
       ],
     );

@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:flutter_practice/app.dart';
 import 'package:flutter_practice/src/dio/dio_screen.dart';
 import 'package:flutter_practice/src/freezed/freezed_screen.dart';
+import 'package:flutter_practice/src/pagination/pagination_screen.dart';
 import 'package:flutter_practice/src/reorederable_list/reorderable_list_page.dart';
 import 'package:flutter_practice/src/rxdart/rxdart.dart';
 import 'package:flutter_practice/src/secure_storage/secure_storage_screen.dart';
@@ -49,10 +50,10 @@ class MyApp extends StatelessWidget {
           path: "/rxdart_screen",
           builder: (_, state) => const RxDartScreen(),
         ),
-        // GoRoute(
-        //   path: "/secure_storage_screen",
-        //   builder: (_, state) => SecureStorageScreen(),
-        // ),
+        GoRoute(
+          path: "/pagination_screen",
+          builder: (_, state) => const PaginationScreen(),
+        ),
       ],
     );
     return MaterialApp.router(

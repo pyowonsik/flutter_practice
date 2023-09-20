@@ -66,8 +66,20 @@ class App extends StatelessWidget {
               child: const Text('RxDartScreen'),
             ),
           ),
-          // const SizedBox(height: 10),
-        ],
+          const SizedBox(height: 10),
+        InkWell(
+            onTap: () {
+              context.go('/pagination_screen');
+            },
+            child: Container(
+              color: Colors.blue,
+              padding: const EdgeInsets.all(16),
+              child: const Text('PaginationScreen'),
+            ),
+          ),
+        ]
+       
+        ,
       ),
     );
   }

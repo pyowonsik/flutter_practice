@@ -20,8 +20,10 @@ PaginationModel _$PaginationModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$PaginationModel {
+  int get userId => throw _privateConstructorUsedError;
   int get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
+  String get body => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +37,7 @@ abstract class $PaginationModelCopyWith<$Res> {
           PaginationModel value, $Res Function(PaginationModel) then) =
       _$PaginationModelCopyWithImpl<$Res, PaginationModel>;
   @useResult
-  $Res call({int id, String title});
+  $Res call({int userId, int id, String title, String body});
 }
 
 /// @nodoc
@@ -51,10 +53,16 @@ class _$PaginationModelCopyWithImpl<$Res, $Val extends PaginationModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? userId = null,
     Object? id = null,
     Object? title = null,
+    Object? body = null,
   }) {
     return _then(_value.copyWith(
+      userId: null == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as int,
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -62,6 +70,10 @@ class _$PaginationModelCopyWithImpl<$Res, $Val extends PaginationModel>
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      body: null == body
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -75,7 +87,7 @@ abstract class _$$_PaginationModelCopyWith<$Res>
       __$$_PaginationModelCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id, String title});
+  $Res call({int userId, int id, String title, String body});
 }
 
 /// @nodoc
@@ -89,10 +101,16 @@ class __$$_PaginationModelCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? userId = null,
     Object? id = null,
     Object? title = null,
+    Object? body = null,
   }) {
     return _then(_$_PaginationModel(
+      userId: null == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as int,
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -101,6 +119,10 @@ class __$$_PaginationModelCopyWithImpl<$Res>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
+      body: null == body
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -108,19 +130,27 @@ class __$$_PaginationModelCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_PaginationModel implements _PaginationModel {
-  _$_PaginationModel({required this.id, required this.title});
+  _$_PaginationModel(
+      {required this.userId,
+      required this.id,
+      required this.title,
+      required this.body});
 
   factory _$_PaginationModel.fromJson(Map<String, dynamic> json) =>
       _$$_PaginationModelFromJson(json);
 
   @override
+  final int userId;
+  @override
   final int id;
   @override
   final String title;
+  @override
+  final String body;
 
   @override
   String toString() {
-    return 'PaginationModel(id: $id, title: $title)';
+    return 'PaginationModel(userId: $userId, id: $id, title: $title, body: $body)';
   }
 
   @override
@@ -128,13 +158,15 @@ class _$_PaginationModel implements _PaginationModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_PaginationModel &&
+            (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.title, title) || other.title == title));
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.body, body) || other.body == body));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, title);
+  int get hashCode => Object.hash(runtimeType, userId, id, title, body);
 
   @JsonKey(ignore: true)
   @override
@@ -152,16 +184,22 @@ class _$_PaginationModel implements _PaginationModel {
 
 abstract class _PaginationModel implements PaginationModel {
   factory _PaginationModel(
-      {required final int id,
-      required final String title}) = _$_PaginationModel;
+      {required final int userId,
+      required final int id,
+      required final String title,
+      required final String body}) = _$_PaginationModel;
 
   factory _PaginationModel.fromJson(Map<String, dynamic> json) =
       _$_PaginationModel.fromJson;
 
   @override
+  int get userId;
+  @override
   int get id;
   @override
   String get title;
+  @override
+  String get body;
   @override
   @JsonKey(ignore: true)
   _$$_PaginationModelCopyWith<_$_PaginationModel> get copyWith =>

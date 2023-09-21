@@ -88,6 +88,17 @@ class App extends StatelessWidget {
               child: const Text('CursorPaginationScreen'),
             ),
           ),
+          const SizedBox(height: 10),
+          InkWell(
+            onTap: () {
+              context.go('/user_screen');
+            },
+            child: Container(
+              color: Colors.blue,
+              padding: const EdgeInsets.all(16),
+              child: const Text('UserScreen'),
+            ),
+          ),
         ],
       ),
     );

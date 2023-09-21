@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_practice/src/user/user_screen.dart';
 
 import 'package:go_router/go_router.dart';
 
@@ -58,6 +59,10 @@ class MyApp extends StatelessWidget {
         GoRoute(
           path: "/cursor_pagination_screen",
           builder: (_, state) => const CursorPaginationScreen(),
+        ),
+        GoRoute(
+          path: "/user_screen",
+          builder: (_, state) => const UserScreen(),
         ),
       ],
     );

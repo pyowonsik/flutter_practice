@@ -15,7 +15,7 @@ class UserScreen extends StatefulWidget {
 
 class _UserScreenState extends State<UserScreen> {
   final dio = Dio();
-  List<User> items = [];
+  late List<User> items;
 
   @override
   void initState() {

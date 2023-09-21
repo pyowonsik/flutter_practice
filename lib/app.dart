@@ -99,6 +99,17 @@ class App extends StatelessWidget {
               child: const Text('UserScreen'),
             ),
           ),
+          const SizedBox(height: 10),
+          InkWell(
+            onTap: () {
+              context.go('/todo_screen');
+            },
+            child: Container(
+              color: Colors.blue,
+              padding: const EdgeInsets.all(16),
+              child: const Text('TodoScreen'),
+            ),
+          ),
         ],
       ),
     );

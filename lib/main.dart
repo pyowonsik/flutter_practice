@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_practice/src/todo/todo_screen.dart';
 import 'package:flutter_practice/src/user/user_screen.dart';
+import 'package:flutter_practice/src/custom_scroll_view/custom_scroll_view.dart';
 
 import 'package:go_router/go_router.dart';
 
@@ -68,6 +69,10 @@ class MyApp extends StatelessWidget {
         GoRoute(
           path: "/todo_screen",
           builder: (_, state) => const TodoScreen(),
+        ),
+        GoRoute(
+          path: "/custom_scroll_view_screen",
+          builder: (_, state) => const CustomScrollViewScreen(),
         ),
       ],
     );
